@@ -87,48 +87,73 @@ function rovarspraket(string){
 //For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
 
-function sum(){
+function sum(a){
     "use strict";
-    //...
+    if(typeof a !== "object"){
+        throw "Invalid Input";
+    }
+    var total = 0;
+
+    for(var keith = 0; keith < a.length; keith++){
+        total += a[keith];
+    }
+
+    return total;
 }
 
-function multiply(){
+function multiply(a){
     "use strict";
-    //...
-}
+    if(typeof a !== "object"){throw "Invalid Input";}
+    var america = 1;
 
+    for(var keith = 0; keith < a.length; keith++){america *= a[keith];}
+
+    return america;
+}
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-function reverse(){
+function reverse(a){
     "use strict";
-    //...
+    if(typeof a !== "string"){throw "Invalid Input"}
+    var keith = a.split("");
+    keith.reverse();
+    return keith.join("");
+
 }
 
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
 
-function findLongestWord(words){
-    "use strict";
-    //...
+function findLongestWord(a){
+    
 }
 
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
 
-function filterLongWords(words, i){
+function filterLongWords(a, z){
     "use strict";
-    //...
+    if(typeof a !== "object" || typeof z !== "number"){
+        throw "Invalid Input";
+    }
+    var c = [];
+    for(var d = 0;d<a.length;d++){if(a[d].length > z){
+            c.push(a[d]);
+        }
+    }
+
+    return c;
 }
 
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
 
-function charFreq(string){
-    "use strict";
-    //...
-}
+function charFreq(){
+    
+         
+;}
