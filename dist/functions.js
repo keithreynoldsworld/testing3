@@ -57,10 +57,29 @@ function isVowel(a){
 //For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // ---------------------
 
-function rovarspraket(phrase){
+function rovarspraket(string){
     "use strict";
-    //...
+    if(typeof string === 'number') {
+        throw 'Invalid Input';
+    }
+
+    var vowels = 'aeiouAEIOU';
+    var resultString = '';
+
+    for(var i=0; i<string.length; i++) {
+        var currentCharacter = string.charAt(i);
+        
+        if(vowels.indexOf(currentCharacter) !== -1) {
+            resultString += currentCharacter;
+        }
+        else {
+            resultString += currentCharacter + 'o' + currentCharacter;
+        }
+    }
+    return resultString;
 }
+    //...
+
 
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies 

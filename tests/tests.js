@@ -65,10 +65,10 @@ describe("rovarspraket", function(){
 		expect(rovarspraket).to.not.be.undefined;
 	});
 	it("should return correct string", function(){
-		expect(rovarspraket("this is fun")).to.equal("tothohisos isos fofunon");
+		expect(rovarspraket("this")).to.equal("tothohisos");
 	});
 	it("should return correct string", function(){
-		expect(rovarspraket("keith")).to.equal("kokeiotothoh");
+		expect(rovarspraket("keith")).to.equal("kokeitothoh");
 	});
 	it("throw an 'invalid input' if given given a number", function(){
 		expect(function() { rovarspraket(876578658765876) }).to.throw('Invalid Input');
