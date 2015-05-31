@@ -6,28 +6,50 @@
 // Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 // ---------------------
 
-function max(){
+function max(a,b){
     "use strict";
-    //...
-}
+    if(typeof a !== "number"){throw 'Invalid Input';}
+    if(typeof b !== "number"){throw 'Invalid Input';}
+    if(a>b){return a;}
+    else{return b;}
+    //.
+};
 
 // ---------------------
 // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 // ---------------------
 
-function maxOfThree(){
+function maxOfThree(a,b,c){
     "use strict";
+    if(typeof a !== "number"){throw 'Invalid Input';}
+    if(typeof b !== "number"){throw 'Invalid Input';}
+    if(typeof c !== "number"){throw 'Invalid Input';}
+    if(a>=b && a>=c){return a;}
+    if(b>=c && b>=a){return b;}
+    else{return c;} 
     //...
-}
+};
 
 // ---------------------
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 // ---------------------
 
-function isVowel(char){
+function isVowel(a){
     "use strict";
+    if(typeof a !== "string"){throw 'Invalid Input';}
+    if(a.length!==1){throw 'Invalid Input';}
+    if(a==="y"){throw 'Only Sometimes';}
+    if(a==="Y"){throw 'Only Sometimes';}
+    if(a.toLowerCase() === "a"){return true;}
+    if(a.toLowerCase() === "e"){return true;}
+    if(a.toLowerCase() === "i"){return true;}
+    if(a.toLowerCase() === "o"){return true;}
+    if(a.toLowerCase() === "u"){return true;}
+    else{return false;}
+
+ //   if char isAVowel return true;
     //...
-}
+};
 
 // ---------------------
 // Write a function translate() that will translate a text into "rövarspråket". 

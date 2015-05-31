@@ -29,7 +29,7 @@ describe("maxOfThree", function(){
 		expect(maxOfThree(100,10000,100000)).to.equal(100000);
 	});
 	it("should return the largest number of three numbers", function(){
-		expect(maxOfThree(0,-3,-2)).to.equal(10);
+		expect(maxOfThree(0,-3,-2)).to.equal(0);
 	});
 	it("should return one of the numbers if the numbers are all equal", function(){
 		expect(maxOfThree(1,1,1)).to.equal(1);
@@ -53,10 +53,10 @@ describe("isVowel", function(){
 		expect(function() { isVowel(2) }).to.throw('Invalid Input');
 	});
 	it("y should throw Only Sometimes", function(){
-		expect(function() { isVowel(y) }).to.throw('Only Sometimes');
+		expect(function() { isVowel("y") }).to.throw('Only Sometimes');
 	});
 	it("Y should throw Only Sometimes", function(){
-		expect(function() { isVowel(Y) }).to.throw('Only Sometimes');
+		expect(function() { isVowel("Y") }).to.throw('Only Sometimes');
 	});
 });
 
