@@ -141,10 +141,10 @@ describe("filterLongWords", function(){
 		expect(filterLongWords).to.not.be.undefined;
 	});
 	it("should return words longer than the number", function(){
-		expect(filterLongWords(["kangaroo","cat","pool","I","comedy"],3)).to.equal(["kangaroo","pool","comedy"]);
+		expect(filterLongWords(["kangaroo","cat","pool","I","comedy"],3)).to.deep.equal(['kangaroo', 'pool', 'comedy']);
 	});
 	it("should return words longer than the number", function(){
-		expect(filterLongWords(["i","eat","apples"],0)).to.equal(["i","eat","apples"]);
+		expect(filterLongWords(["i","eat","apples"],0)).to.deep.equal(['i', 'eat', 'apples']);
 	});
 
 	it("incorrect types throw invalid Input", function(){

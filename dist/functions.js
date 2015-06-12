@@ -128,32 +128,76 @@ function reverse(a){
 // ---------------------
 
 function findLongestWord(a){
-    
+    'use strict';
+    if(a instanceof Array !== true) {
+        throw 'Invalid Input';
+    } else if (a.length<2){
+        throw 'Invalid Input';
+    }
+    for(var z=0; z<a.length; z++) {
+        if (typeof a[z] !== 'string') {
+            throw 'Invalid Input';
+        }
+    }
+    var result = a.sort(function(w, b) {return w.length - b.length} );
+    return result[result.length-1];
 }
 
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
 
-function filterLongWords(a, z){
-    "use strict";
-    if(typeof a !== "object" || typeof z !== "number"){
-        throw "Invalid Input";
-    }
-    var c = [];
-    for(var d = 0;d<a.length;d++){if(a[d].length > z){
-            c.push(a[d]);
+function filterLongWords (a, b) {
+    'use strict';
+    if(a instanceof Array !== true) {
+        throw 'Invalid Input';
+    } else if (a.length < 2){
+        throw 'Invalid Input';
+    } else if (typeof b !== 'number') {
+        throw 'Invalid Input';
+    } 
+    var answer = [];
+
+    for(var z=0; z<a.length; z++) {
+        if (typeof a[z] !== 'string') {
+            throw 'Invalid Input';
+        } 
+        else if(a[z].length > b) {
+            answer.push(a[z]);
         }
     }
+    return answer;
 
-    return c;
 }
-
 // ---------------------
-// Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
+// Write a function charFreq() that takes a string and builds a 
+//frequency listing of the characters contained in it. 
+//Represent the frequency listing as a Javascript object.
+// Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
 
-function charFreq(){
-    
-         
-;}
+function charFreq (keith) {
+    'use strict';
+    if (typeof keith !== 'string') {
+        throw 'Invalid Input';
+    } else if (keith == '') {
+        throw 'Invalid Input';
+    } 
+    var hamburger = []
+    var object = {};
+    for(var m=0; m<keith.length; m++) {
+        var house = keith[m];
+        var pinky = 0;
+        for(var z=0; z<keith.length; z++) {
+            if (keith[z] == house) {
+                pinky ++;
+            }
+        }
+        object[house] = pinky;
+    }
+    for (var easy in object) {
+        hamburger.push(easy + ': ' + object[easy]);
+    }
+    hamburger = hamburger.join(', ');
+    return hamburger;
+}
